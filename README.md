@@ -7,7 +7,7 @@ B3SI is a sensor interface for my space balloon. It reads all serial output from
 
 1. Reads and logs CPU temps.
 
-2. Logs atmosphere temps.
+2. Logs atmosphere temps. #Needs arduino connected via usb and Pyserial installed on Raspberry Pi.
 
 3. Takes pictures through a webcam. *Note*: You need a webcam connected via usb.
 

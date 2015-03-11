@@ -11,5 +11,6 @@ B3SI is a sensor interface for my space balloon. It reads all serial output from
 
 3. Takes pictures through a webcam. *Note*: You need a webcam connected via usb.
 
-4. Sorts unique strings that are logged. 
+4. Sorts unique strings that are logged. #No logging function yet.
 
+Might get rid of uniq_sort. Haven't found a use for sorting uniques yet. I think I might want all data collected.

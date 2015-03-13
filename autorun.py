@@ -13,7 +13,7 @@ def main():
         auto.a_temp()
         auto.take_pic()
         print(" -------------------------------------------------- ")
-        print(" | Waiting a couple minutes before another loop.| ")
+        print(" | Waiting a couple minutes before another loop.  | ")
         print(" -------------------------------------------------- ")
         sleep(200)
     

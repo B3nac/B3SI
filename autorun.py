@@ -12,7 +12,6 @@ def main():
         auto.check_temp()
         auto.a_temp()
         auto.take_pic()
-        auto.sort_uniq()
         print(" -------------------------------------------------- ")
         print(" | Waiting a couple minutes before another loop.| ")
         print(" -------------------------------------------------- ")

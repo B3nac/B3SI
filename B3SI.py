@@ -5,7 +5,7 @@ import subprocess
 import time
 import serial
 
-print('B3SI version 1.0. Using Python3')
+print('B3SI version 1.0. Cmd line testing programmed in Python3')
 
 class B3SI(object):
 

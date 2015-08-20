@@ -5,9 +5,9 @@ B3SI is a sensor interface for my space balloon/robot projects. It reads all ser
 
 ##v0.1.0:##
 To-Do:
-- Barometric pressure sensor.
-- Get rid of newline and byte characters on a_temp function.
-- Add alot more to make it the best possible space balloon/robot interface.
+Barometric pressure sensor.
+Get rid of newline and byte characters on a_temp function.
+Add alot more to make it the best possible space balloon/robot interface.
 
 1. Reads CPU, atmosphere temp, humidity, and heat index.
 2. Takes pictures through webcam.

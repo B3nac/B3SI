@@ -7,9 +7,10 @@ import locale
 import serial
 
 print('B3interface version 1.0. Using Python3')
+datalogging = []
 
 class B3interface(object):
-
+    
     def __init__(self):
         self.cmd = ''
         self.done = False
@@ -22,7 +23,7 @@ class B3interface(object):
         elif self.cmd == 'cpu_temp':
             self.check_temp()
         elif self.cmd == 'a_temp':
-            self.a_temp()
+            self.a_temp() 
         elif self.cmd == 'netscan':
             self.network_scan()
         elif self.cmd == 'scan_ip':
@@ -40,13 +41,14 @@ class B3interface(object):
             
         else:
             print('Command does not exist,'
-			      'try help for list of commands')
+	          'try help for list of commands')
 
     def cmd_loop(self):
         while not self.done:
             self.event_loop()
     
     def a_temp(self):
+        log = open("log.txt", "a")
         print("Atmosphere temp is: ")
         
         arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=.1)
@@ -57,7 +59,16 @@ class B3interface(object):
             if line < 10:
                 print(data)
                 line += 1
-
+                log.write(str("\n"))
+                log.write(str(data))
+                log.close()
+        
+    def log():
+        log = open("log.txt", "a")
+        print("Logging.")
+        log.write(str("\n"))
+        log.write(str(data)) 
+        log.close()
 
     def network_scan(self):
         print("Pinging network.")
@@ -114,7 +125,6 @@ class B3interface(object):
   
     def take_pic(self):
         pic = './take_pic.sh'
-        subprocess.call(pic, shell = True)
         print("Taking pictures.")
 
     def check_connections(self):
@@ -139,11 +149,10 @@ class B3interface(object):
         self.done = True
         
 def main():
-	start = B3interface()
-	start.event_loop()
-	start.cmd_loop()
+        start = B3interface()
+        start.event_loop()
+        start.cmd_loop()
 	
-
 if __name__ == '__main__':
 	main()
 

@@ -114,6 +114,7 @@ class B3interface(object):
   
     def take_pic(self):
         pic = './take_pic.sh'
+        subprocess.call(pic, shell = True)
         print("Taking pictures.")
 
     def check_connections(self):

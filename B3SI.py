@@ -7,7 +7,6 @@ import locale
 import serial
 
 print('B3interface version 1.0. Using Python3')
-datalogging = []
 
 class B3interface(object):
     
@@ -62,13 +61,6 @@ class B3interface(object):
                 log.write(str("\n"))
                 log.write(str(data))
                 log.close()
-        
-    def log():
-        log = open("log.txt", "a")
-        print("Logging.")
-        log.write(str("\n"))
-        log.write(str(data)) 
-        log.close()
 
     def network_scan(self):
         print("Pinging network.")

@@ -15,7 +15,7 @@ def main():
         print(" -------------------------------------------------- ")
         print(" | Waiting a couple minutes before another loop.| ")
         print(" -------------------------------------------------- ")
-        sleep(200)
+        sleep(100)
     
 if __name__ == '__main__': 
         main()

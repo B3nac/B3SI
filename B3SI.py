@@ -49,18 +49,15 @@ class B3interface(object):
     def a_temp(self):
         log = open("log.txt", "a")
         print("Atmosphere temp is: ")
-        
         arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=.1)
-        time.sleep(1) #give the connection a second to settle
-        data = arduino.readline()
-        line = 1
-        if data:
-            if line < 10:
-                print(data)
-                line += 1
-                log.write(str("\n"))
-                log.write(str(data))
-                log.close()
+        while True:
+            log = open("log.txt", "a")
+            count += 1
+            data =  print(arduino.readline())
+            time.sleep(0.01)     
+            log.write(str("\n"))
+            log.write(str(arduino.readline()))
+            log.close()
 
     def network_scan(self):
         print("Pinging network.")

@@ -35,6 +35,8 @@ class B3interface(object):
             self.take_pic()
         elif self.cmd == 'who':
             self.check_connections()
+        elif self.cmd == 'help':
+            self.help()
         elif self.cmd == 'exit':
             self.exit_loop()
             
@@ -48,7 +50,7 @@ class B3interface(object):
 
     def help(self):
     	print("Current list of commands are: listf, cpu_temp, a_temp, netscan, scan_ip,"
-              "scan_ip, scan_os, sort_uniq, take_pic, check_connections, exit")
+              "scan_ip, scan_os, sort_uniq, take_pic, check_connections, exit.")
     
     def a_temp(self):
         log = open("log.txt", "a")

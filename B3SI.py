@@ -45,6 +45,10 @@ class B3interface(object):
     def cmd_loop(self):
         while not self.done:
             self.event_loop()
+
+    def help(self):
+    	print("Current list of commands are: listf, cpu_temp, a_temp, netscan, scan_ip,"
+              "scan_ip, scan_os, sort_uniq, take_pic, check_connections, exit")
     
     def a_temp(self):
         log = open("log.txt", "a")

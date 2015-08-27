@@ -15,6 +15,7 @@ class B3interface(object):
         self.done = False
 
     def event_loop(self):
+        #Add error catching.
         self.cmd = input('(B3)> ')
 			
         if self.cmd == 'listf':

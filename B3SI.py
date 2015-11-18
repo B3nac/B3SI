@@ -6,7 +6,7 @@ import time
 import locale
 import serial
 
-print('B3interface version 1.0. Using Python3')
+print('B3interface version 1.0.0 Using Python3')
 
 class B3interface(object):
     
@@ -15,7 +15,6 @@ class B3interface(object):
         self.done = False
 
     def event_loop(self):
-        #Add error catching.
         self.cmd = input('(B3)> ')
 			
         if self.cmd == 'listf':
@@ -36,7 +35,7 @@ class B3interface(object):
             self.take_pic()
         elif self.cmd == 'who':
             self.check_connections()
-        elif self.cmd == 'help':
+        elif self.help == 'help':
             self.help()
         elif self.cmd == 'exit':
             self.exit_loop()
@@ -50,20 +49,21 @@ class B3interface(object):
             self.event_loop()
 
     def help(self):
-    	print("Current list of commands are: listf, cpu_temp, a_temp, netscan, scan_ip,"
+        print("Current list of commands are: listf, cpu_temp, a_temp, netscan, scan_ip,"
               "scan_ip, scan_os, sort_uniq, take_pic, check_connections, exit.")
     
     def a_temp(self):
         log = open("log.txt", "a")
         print("Atmosphere temp is: ")
         arduino = serial.Serial('/dev/ttyACM0', 9600, timeout=.1)
+        count = 32
         while True:
             log = open("log.txt", "a")
             count += 1
-            data =  print(arduino.readline())
+            data =  print(arduino.readline().decode('utf-8'))
             time.sleep(0.01)     
             log.write(str("\n"))
-            log.write(str(arduino.readline()))
+            log.write(str(arduino.readline().decode('utf-8')))
             log.close()
 
     def network_scan(self):
